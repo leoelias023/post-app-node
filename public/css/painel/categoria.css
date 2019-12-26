@@ -1,0 +1,40 @@
+.card-main{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-suc{
+    position: relative;
+    top: 30px;
+}
+
+.card form label{
+    margin-bottom: 10px;
+}
+
+.btn-fim:focus{
+    outline: none;
+    background-color: rgb(194, 28, 245);
+    color: #fff;
+    padding: 12px 43%;
+    transition: 0.5s;
+    margin-left: -13.5px;
+}
+
+.box-msg{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    border: 3.5px solid rgb(236, 236, 236);
+    font-weight: 700;
+}
+
+.box-msg-success{
+    background-color: rgb(95, 202, 95);
+}
+
+.box-msg-error{
+    background-color: rgb(211, 87, 87);
+}

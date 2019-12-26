@@ -1,0 +1,142 @@
+.container{
+    width: 70%;
+    margin: 0 15%;
+}
+
+.card{
+    border: 3px solid rgb(230, 230, 230);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+input[type="text"]{
+    display: block;
+    width: 90%;
+    padding: 10px 15px;
+    border: 2px solid rgb(204, 204, 204);
+    border-radius: 10px;
+    font-size: 1.05em;
+}
+
+input[type="text"]:focus{
+    outline: none;
+    border: 3px solid rgb(90, 103, 221);
+}
+
+.btn{
+    background-color: rgb(90, 103, 221);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #fff;
+    margin: 3px;
+}
+.btn:focus{
+    outline: none;
+    border: 3px solid rgba(92, 141, 247, 0.774);
+}
+.btn:hover{
+    background-color: rgb(115, 129, 255);
+}
+
+.para-text{
+    color: rgb(116, 116, 116);
+    margin: 10px;
+}
+
+.title{
+    color: rgb(56, 56, 56);
+}
+
+
+/*  ESPAÇAMENTOS */
+
+    .mt-1{
+        margin-top: 10px;
+    }
+    .mt-2{
+        margin-top: 20px;
+    }
+    .mt-3{
+        margin-top: 30px;
+    }
+    .mt-4{
+        margin-top: 40px;
+    }
+    .mt-5{
+        margin-top: 50px;
+    }
+
+    .mb-1{
+        margin-bottom: 10px;
+    }
+    .mb-2{
+        margin-bottom: 20px;
+    }
+    .mb-3{
+        margin-bottom: 30px;
+    }
+    .mb-4{
+        margin-bottom: 40px;
+    }
+    .mb-5{
+        margin-bottom: 50px;
+    }
+
+    .ml-1{
+        margin-left: 10px;
+    }
+    .ml-2{
+        margin-left: 20px;
+    }
+    .ml-3{
+        margin-left: 30px;
+    }
+    .ml-4{
+        margin-left: 40px;
+    }
+    .ml-5{
+        margin-left: 50px;
+    }
+
+    .mr-1{
+        margin-right: 10px;
+    }
+    .mr-2{
+        margin-right: 20px;
+    }
+    .mr-3{
+        margin-right: 30px;
+    }
+    .mr-4{
+        margin-right: 40px;
+    }
+    .mr-5{
+        margin-right: 50px;
+    }
+
+
+/* BUTTON SUBMIT */
+
+    input[type="submit"]{
+        padding: 12px 15px;
+        border-radius: 30px;
+        border: none;
+        background-color: rgb(84, 138, 253);
+        color: #fff;
+        font-size: 1em;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    input[type="submit"]:focus{
+        outline: none;
+    }
+
+    input[type="submit"]:hover{
+        color: #fff;
+        background-color: rgb(194, 28, 245);
+        transition: 1s;
+    }

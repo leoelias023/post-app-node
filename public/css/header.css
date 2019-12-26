@@ -1,0 +1,171 @@
+*{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* HEADER GLOBAL APP */
+.global-header{
+    background-color: rgba(0, 126, 243, 0.801);
+    background-blend-mode: unset;
+    background-attachment: fixed;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 10fr 4fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "title nav"
+                         "nav-extra nav-extra";
+    transition: 1s;
+}
+.title-padrao{
+    font-size: 2em;
+    color: rgb(41, 41, 41);
+    font-weight: 900;
+    grid-area: title;
+}
+.nav-bar{
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar ul{
+    list-style: none;
+}
+.nav-bar ul a {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 1.1em;
+    color: rgb(75, 75, 75);
+}
+
+.active{
+    color: rgb(0, 0, 0) !important;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.icone-nav{
+    width: 30px;
+    cursor: pointer;
+}
+.nav-mobile{
+    display: none;
+}
+
+@media (max-width: 770px)
+{
+    .nav-bar{
+        display: none !important;
+    }
+    .nav-mobile{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+.dp-none{
+    display: none;
+}
+.animation-css{
+    position: relative;
+    animation: rollback 1s;
+}
+@keyframes rollback{
+    0%{
+        top: 0px;
+    }
+    50%{
+        top: 10px;
+    }
+    100%{
+        top: 00px;
+    }
+}
+#menu_extra{
+    margin-top: 35px;
+    grid-area: nav-extra;
+}
+#menu_extra ul a{
+    text-decoration: none;
+}
+#menu_extra ul li{
+    text-decoration: none;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px 10px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+}
+#menu_extra ul li:hover{
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+#menu_extra ul a li{
+    margin-bottom: 20px;
+}
+
+
+/* HEADER DASHBOARD */
+
+.header-gl{
+    background-color: rgb(87, 120, 209);
+    display: grid;
+    grid-template-columns: 10fr 4fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'title nav';
+    padding: 10px;
+}
+.header-title{
+    font-size: 2em;
+    color: #fff;
+    grid-area: title;
+    display: flex;
+    align-items: center;
+}
+.header-nav{
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.header-nav ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.header-nav ul li{
+    margin-right: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    color: rgb(91, 89, 207);
+    cursor: pointer;
+}
+.header-nav ul li a{
+    color: rgb(91, 89, 207); 
+}
+
+.header-nav ul li:hover{
+    animation: onda 0.2s;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.582);
+}
+
+@keyframes onda{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 626px)
+{
+    .header-nav{
+        display: none;
+    }
+}
