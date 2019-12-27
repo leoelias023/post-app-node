@@ -1,0 +1,17 @@
+{{#each erros}}
+    <div class="box-msg box-msg-error">
+        {{text}}
+    </div>
+{{/each}}
+<link rel="stylesheet" href="/css/painel/categoria.css">
+<h2 class="mt-3 mb-3 title">Edite a categoria</h2>
+<div class="card">
+    <form action="/painel/categoria/editar/editing" method="POST">
+        <input type="hidden" name="id_categoria" value="{{categoria._id}}">
+        <label for="nome_categoria">Nome da categoria</label>
+        <input type="text" class="mt-1" value="{{categoria.name}}" name="nome_categoria"><br>
+        <label class="mt-5" for="slug_categoria">Slug da categoria</label>
+        <input type="text" class="mt-1" value="{{categoria.slug}}" name="slug_categoria">
+        <input class="mt-2 btn-fim" type="submit" value="Editar">
+    </form>
+</div>

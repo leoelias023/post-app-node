@@ -10,6 +10,9 @@
     const session = require('express-session');
 // Requering the panel
         const painel = require('./routes/painel.js')
+        // Models
+            require('./models/Postagem');
+            const Postagem = mongoose.model('postagem');
 
 // Global configurations
     // Static archives
@@ -28,9 +31,13 @@
             useNewUrlParser: true,
             useUnifiedTopology: true
         }).then( () => {
-            console.log('\nThe bank of data is connected');
+            console.log('   #  DB: CONNECTED                           #');
+            console.log('   #                                          #');
+            console.log('   ############################################\n');
         }).catch( (err) => {
-            console.log('\nThe bank is not working, error: '+ err);
+            console.log('   #  DB: NOT CONNECTED                       #');
+            console.log('   #                                          #');
+            console.log('   ############################################\n');
         })
     // Session and Flash
         app.use(session({
@@ -49,18 +56,24 @@
 // Global Routes
     // Main route
         app.get('/' , (req,res) => {
-            res.render('home');
+            Postagem.find().then( (postagem) => {
+                res.render('main/postagens' , {postagens: postagem});
+            })
+        })
+    // Routes of index
+        app.get('/postagens' , (req,res) => {
+            Postagem.find().then( (postagem) => {
+                res.render('main/postagens' , {postagens: postagem});
+            })
         })
     // Group of routes [PAINEL ADMIN]
         app.use('/painel' , painel);
 
 // Listen Server informations
     app.listen(PORT , () => {
-        console.log('############################################')
-        console.log('#          SERVER OPENED: POSTAPP          #');
-        console.log('#                                          #');
-        console.log('#  PORT: '+PORT+'                                #');
-        console.log('#  PROCESS: app.js'+'                         #')
-        console.log('#                                          #');
-        console.log('############################################');
+        console.log('\n   ############################################')
+        console.log('   #          SERVER OPENED: POSTAPP          #');
+        console.log('   #                                          #');
+        console.log('   #  PORT: '+PORT+'                                #');
+        console.log('   #  PROCESS: app.js'+'                         #');
     });

@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/main/postagens.css">
+<div class="card mt-4 align-center">
+    <h1 class="align-center">Bem vindo,</h1>
+    <p class="mt-2">PostApp, aqui você encontra noticias de diversos tipos e gêneros.</p>
+    <button class="btn mt-2">Procurar novas noticias</button>
+</div>
+<h2 class="align-center mt-4">Postagens</h2>
+<div class="card mt-2">
+    {{#each postagens}}
+        <div class="card">
+            <h3>{{titulo}}</h3>
+            <p>{{conteudo}}</p>
+            <small>{{date}}</small>
+        </div>
+    {{else}}
+        <h3 class="title">Ops... Blog sem postagens!</h3>
+    {{/each}}
+</div>

@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/painel/categoria.css">
+{{#if success_msg}}
+    <div class="box-msg box-msg-success">
+        {{success_msg}}
+    </div>
+{{/if}}
+{{#if error_msg}}
+    <div class="box-msg box-msg-error">
+        {{error_msg}}
+    </div>
+{{/if}}
+<div class="btns">
+    <a class="btn" href="/painel/categoria/cadastrar">Cadastrar categoria</a>
+</div>
+<div class="card card-main">
+    <h2 class="title">Lista de categorias</h2>
+</div>
+<div class="card card-main">
+    <div class="card box-cat box-head-cat">
+        <h4 class="head-cat">Categoria</h4>
+        <h4 class="head-cat">Slug</h4>
+    </div>
+    {{#each categoria}}
+        <div class="card box-cat">
+            <h4 class="name-cat">{{name}}</h4>
+            <small class="slug-cat">{{slug}}</small>
+            <div class="btn-cat">
+                <a href="/painel/categoria/excluir/{{_id}}" class="btn btn-exc btn-wow">X</a>
+                <a href="/painel/categoria/editar/{{_id}}" class="btn btn-edit btn-wow">EDIT</a>
+            </div>
+        </div>
+    {{else}}
+        <h4 class="title mt-4 mb-2">Nenhuma categoria foi encontrada!</h4>
+    {{/each}}
+</div>

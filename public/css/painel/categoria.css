@@ -3,9 +3,8 @@
     text-align: center;
 }
 
-.btn-suc{
-    position: relative;
-    top: 30px;
+.btns{
+    margin-top: 40px; 
 }
 
 .card form label{
@@ -37,4 +36,66 @@
 
 .box-msg-error{
     background-color: rgb(211, 87, 87);
+}
+
+.box-cat{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-template-rows: auto;
+    grid-template-areas: "nome slug btn";
+}
+
+.name-cat{
+    grid-area: nome;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slug-cat{
+    grid-area: slug;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-head-cat{
+    background-color: rgb(132, 99, 192);
+    height: 50px;
+}
+
+.head-cat{
+    margin-top: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.btn-cat{
+    grid-area: btn;
+    display: flex;
+    justify-content: end;
+}
+
+.btn-exc{
+    background-color: rgb(224, 86, 86);
+    padding: 10px 15px;
+}
+
+.btn-exc:hover{
+    background-color: rgb(235, 108, 108);
+}
+
+.btn-edit{
+    background-color: rgb(235, 189, 63);
+    transition: 1s;
+}
+
+.btn-edit:hover{
+    background-color: rgb(233, 204, 125);
+    transition: 0.3s;
+}
+
+.btn-wow{
+    font-weight: 900;
 }

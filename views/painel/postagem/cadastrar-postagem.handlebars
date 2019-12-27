@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/painel/postagem.css">
+{{#each erros}}
+    <div class="box-msg-error box-msg">
+        {{text}}
+    </div>
+{{/each}}
+<div class="mt-4 ml-4 mb-2">
+    <a href="/painel/postagem" class="btn">Voltar</a>
+</div>
+<div class="card mt-4">
+    <h2 class="title mb-4">Cadastro de novas postagens</h2>
+    <form action="/painel/postagem/cadastrar/new" class="form-control" method="POST">
+        <label for="titulo_post">
+            Título:
+        </label>
+        <input type="text" name="titulo_post">
+        <label for="conteudo_post">
+            Conteúdo do post:
+        </label><br>
+        <textarea spellcheck="false" name="conteudo_post"></textarea><br>
+        <label for="slug_post">
+            Slug do post:
+        </label>
+        <input type="text" name="slug_post">
+        <label for="categoria_post">
+            Categoria do post:
+        </label>
+        <select class="mt-2 sele-cat ml-2" name="categoria_post">
+            <option value="escolha">Clique e Escolha...</option>
+            {{#each categoria}}
+                <option value="{{_id}}">{{name}}</option>
+            {{else}}
+                <option>Categoria não encontrada!</option>
+            {{/each}}
+        </select><br>
+        <div class="align-center">
+            <input type="submit" class="btn mt-4" value="Cadastrar Post">
+        </div>
+    </form>
+</div>

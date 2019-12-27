@@ -40,6 +40,12 @@ input[type="text"]:focus{
 .btn:hover{
     background-color: rgb(115, 129, 255);
 }
+.btn-exc{
+    background-color: rgb(214, 80, 80);
+}
+.btn-exc:hover{
+    background-color: rgb(243, 119, 119);
+}
 
 .para-text{
     color: rgb(116, 116, 116);
@@ -140,3 +146,45 @@ input[type="text"]:focus{
         background-color: rgb(194, 28, 245);
         transition: 1s;
     }
+
+    .align-center{
+        text-align: center;
+    }
+
+    textarea{
+        border-radius: 20px;
+        border: 3px solid rgb(207, 207, 207);
+        padding: 10px;
+    }
+    input:active{
+        border: 3px solid rgb(90, 103, 221);
+    }
+
+    textarea:active{
+        border: 3px solid rgb(90, 103, 221);
+    }
+    textarea:focus{
+        border: 3px solid rgb(90, 103, 221);
+    }
+
+.box-msg{
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    border: 3.5px solid rgb(236, 236, 236);
+    font-weight: 700;
+}
+
+.box-msg-success{
+    background-color: rgb(95, 202, 95);
+}
+
+.box-msg-error{
+    background-color: rgb(211, 87, 87);
+}
+
+.align-right{
+    text-align: right;
+}

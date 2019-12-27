@@ -1,0 +1,43 @@
+input[type="text"]{
+    margin: 10px 0;
+}
+
+textarea{
+    margin: 10px 0;
+    min-width: 93%;
+    max-width: 93%;
+    min-height: 100px;
+}
+
+.sele-cat{
+    border: 2px solid rgb(177, 177, 177);
+    border-radius: 10px;
+    text-overflow: "";
+    text-indent: 0.01px;
+    padding: 10px 15px;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    outline: 0;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+select:focus{
+    border: 2px solid rgb(147, 92, 202);
+    outline: 0;
+}
+
+option:focus{
+    outline: none;
+    outline: 0;
+}

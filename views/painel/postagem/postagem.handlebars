@@ -1,0 +1,33 @@
+{{#if success_msg}}
+    <div class="box-msg box-msg-success">
+        {{success_msg}}
+    </div>
+{{/if}}
+{{#if error_msg}}
+    <div class="box-msg box-msg-error">
+        {{error_msg}}
+    </div>
+{{/if}}
+<h2 class="title mt-4">MENU PARA POSTAGENS</h2>
+<div class="card align-center mt-2">
+    <a class="btn" href="/painel/postagem/cadastrar">Cadastrar Postagem</a>
+    <a class="btn" href="">Visualizar Postagem</a>
+</div>
+<div class="card mt-4">
+    <h3 class="align-center mb-2 mt-1 title" style="font-size: 1.7em;">Lista de postagens</h3>
+    {{#each postagem}}
+        <div class="card card-head mt-3">
+            <h4 class="title title-post" style="font-size: 1.3em;">{{titulo}}</h4>
+            <p class="mt-1 mb-1">{{conteudo}}</p>
+            <small class="mt-2">{{date}}</small>
+            <p class="mt-2">Categoria: {{categoria.name}}</p>
+            <div class="btns mt-2 align-right">
+                <a href="/painel/postagem/excluir/{{_id}}" class="btn btn-exc">Excluir</a>
+            </div>
+        </div>
+    {{else}}
+        <div class="card">
+            <h4 class="title">Nenhuma postagem foi encontrada!</h4>
+        </div>
+    {{/each}}
+</div>

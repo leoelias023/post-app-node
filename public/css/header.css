@@ -4,7 +4,7 @@
 
 /* HEADER GLOBAL APP */
 .global-header{
-    background-color: rgba(0, 126, 243, 0.801);
+    background-color: rgb(103, 124, 219);
     background-blend-mode: unset;
     background-attachment: fixed;
     padding: 20px;
@@ -120,7 +120,8 @@
     color: #fff;
     grid-area: title;
     display: flex;
-    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px;
 }
 .header-nav{
     grid-area: nav;
@@ -128,6 +129,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 10px 0;
 }
 .header-nav ul{
     display: flex;
