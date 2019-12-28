@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/e26c2674eb.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/global.css">
-    <title>PostApp - Dashboard</title>
+    <title>BlogApp</title>
 </head>
 <body>
-    {{>_header_dash}}
-    <div class="container">
-        {{#if error}}
-            <div class="box-msg box-msg-error">
-                {{error}}
-            </div>
-        {{/if}}
-        {{{body}}}
-    </div>
+    {{#if error}}
+        <div class="box-msg box-msg-error">
+            {{error}}
+        </div>
+    {{/if}}
+    {{{body}}}
 </body>
 </html>

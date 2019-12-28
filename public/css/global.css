@@ -9,7 +9,7 @@
     padding: 20px;
 }
 
-input[type="text"]{
+input[type="text"],input[type="password"]{
     display: block;
     width: 90%;
     padding: 10px 15px;
@@ -18,7 +18,7 @@ input[type="text"]{
     font-size: 1.05em;
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus,input[type="password"]:focus{
     outline: none;
     border: 3px solid rgb(90, 103, 221);
 }
@@ -35,7 +35,6 @@ input[type="text"]:focus{
 }
 .btn:focus{
     outline: none;
-    border: 3px solid rgba(92, 141, 247, 0.774);
 }
 .btn:hover{
     background-color: rgb(115, 129, 255);
@@ -187,4 +186,8 @@ input[type="text"]:focus{
 
 .align-right{
     text-align: right;
+}
+
+.uppercase{
+    text-transform: uppercase;
 }

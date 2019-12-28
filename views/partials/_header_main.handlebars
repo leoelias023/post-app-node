@@ -13,6 +13,15 @@
             <a href="/painel">
                 <li>Painel</li>
             </a>
+            {{#if user}}
+                <a href="/Logout">
+                    <li>Logout</li>
+                </a>
+            {{else}}
+                <a href="/login">
+                    <li>Login</li>
+                </a>
+            {{/if}}
         </ul>
     </div>
     <nav class="nav-bar">
@@ -23,6 +32,15 @@
             <a href="/painel">
                 <li>Painel</li>
             </a>
+            {{#if user}}
+                <a href="/Logout">
+                    <li>Logout</li>
+                </a>
+            {{else}}
+                <a href="/login">
+                    <li>Login</li>
+                </a>
+            {{/if}}
         </ul>
     </nav>
 </header>

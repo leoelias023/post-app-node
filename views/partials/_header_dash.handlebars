@@ -3,9 +3,12 @@
     <a href="/painel"><h1 class="header-title">Dashboard</h1></a>
     <div class="header-nav">
         <ul>
-            <a href="/painel"><li>Home</li></a>
+            <a href="/"><li>Home</li></a>
             <a href="/painel/categoria"><li>Categorias</li></a>
             <a href="/painel/postagem"><li>Postagens</li></a>
+            {{#if user}}
+                <a href="/logout"><li>Logout</li></a>
+            {{/if}}
         </ul>
     </div>
 </header>

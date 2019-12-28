@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/css/main/login.css">
+{{#each erros}}
+    <div class="box-msg box-msg-error">
+        {{text}}
+    </div>
+{{/each}}
+<div class="main-center">
+    <h2 class="title align-center mt-2 mb-4 uppercase">d<d>ash</d>board</h2>
+    <form action="/usuario/cadastro/new" method="POST">
+        <label for="login_user">Login:</label>
+        <input type="text" name="login_user" required="" class="mt-1 mb-2">
+
+        <label for="senha_user">Senha:</label>
+        <input type="password" name="senha_user" required="" class="mt-1 mb-2">
+
+        <label for="senha_user">Confirme a Senha:</label>
+        <input type="password" name="confirma_user" required="" class="mt-1 mb-2">
+        
+        <label for="nome_user">Nome:</label>
+        <input type="text" name="nome_user" required="" class="mt-1 mb-2">
+
+        <label for="sobrenome_user">Sobrenome:</label>
+        <input type="text" name="sobrenome_user" required="" class="mt-1">
+
+        <div class="central align-center">
+            <input type="submit" class="btn mt-4" value="Cadastre-se">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/main/login.css">
+{{#each erros}}
+    <div class="box-msg box-msg-error">
+        {{text}}
+    </div>
+{{/each}}
+<div class="main-center">
+    <h2 class="title align-center mt-2 mb-4 uppercase">d<d>ash</d>board</h2>
+    <form action="/login/auth" method="POST">
+        <label for="name_user">User:</label>
+        <input type="text" name="name_user" class="mt-1 mb-2">
+        <label for="senha_user">Senha:</label>
+        <input type="text" name="senha_user" class="mt-1">
+        <div class="central align-center">
+            <input type="submit" class="btn mt-4" value="Login to panel">
+        </div>
+    </form>
+</div>

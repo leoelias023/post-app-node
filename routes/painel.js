@@ -9,14 +9,19 @@ const router = express.Router();
     // Requiring post
         require('../models/Postagem');
         const Postagem = mongoose.model('postagem');
+    // Requiring user
+        require('../models/Usuario');
+        const Usuario = mongoose.model('usuario');
+        // Authenticate
+            const {eAdmin} = require('../helpers/eAdmin');
 
 // Main Route of painel
-    router.get('/' , (req,res) => {
+    router.get('/' , eAdmin, (req,res) => {
         res.render('painel/home' , {layout: 'dashboard'});
     });
 
 // Route of categories
-    router.get('/categoria' , (req,res) => {
+    router.get('/categoria' , eAdmin, (req,res) => {
         Categoria.find().sort({date: -1}).then( (categoria) => {
             res.render('painel/categoria/categoria' , {layout: 'dashboard' , categoria: categoria}); 
         }).catch( (err) => {
@@ -25,10 +30,10 @@ const router = express.Router();
         });
     })
     // Add a new category
-        router.get('/categoria/cadastrar' , (req,res) => {
+        router.get('/categoria/cadastrar' , eAdmin, (req,res) => {
             res.render('painel/categoria/cadastrar-categoria' , {layout: 'dashboard'});
         })
-        router.post('/categoria/cadastrar/new' , (req,res) => {
+        router.post('/categoria/cadastrar/new' , eAdmin, (req,res) => {
             // Validation of form [EM CRIACAO!!]
                 let name = req.body.nome_categoria;
                 let slug = req.body.slug_categoria;
@@ -66,7 +71,7 @@ const router = express.Router();
                     }
         })
 
-        router.get('/categoria/excluir/:id' , (req,res) => {
+        router.get('/categoria/excluir/:id' , eAdmin, (req,res) => {
             idEscolhido = req.params.id;
             Categoria.deleteOne({_id: idEscolhido}).then( () => {
                 req.flash('success_msg' , 'Categoria excluida!');
@@ -77,7 +82,7 @@ const router = express.Router();
             })
         })
 
-        router.get('/categoria/editar/:id' , (req,res) => {
+        router.get('/categoria/editar/:id' , eAdmin, (req,res) => {
             idEscolhido = req.params.id;
             Categoria.findOne({_id: idEscolhido}).then( (categoria) => {
                 res.render('painel/categoria/editar-categoria' , {categoria: categoria , layout: 'dashboard'})
@@ -87,7 +92,7 @@ const router = express.Router();
             })
         })
 
-        router.post('/categoria/editar/editing' , (req,res) => {
+        router.post('/categoria/editar/editing' , eAdmin, (req,res) => {
             let name =  req.body.nome_categoria;
             let slug = req.body.slug_categoria;
             
@@ -128,7 +133,7 @@ const router = express.Router();
 
 // Route of POSTS
     // Main route of posts
-        router.get('/postagem' , (req,res) => {
+        router.get('/postagem' , eAdmin, (req,res) => {
             Postagem.find().populate('categoria').then( (postagem) => {
                 res.render('painel/postagem/postagem' , {layout: 'dashboard' , postagem: postagem})
             }).catch( (err) => {
@@ -136,14 +141,14 @@ const router = express.Router();
                 res.render('painel/postagem/postagem' , {layout: 'dashboard'})
             })
         })
-        router.get('/postagem/cadastrar' , (req,res) => {
+        router.get('/postagem/cadastrar' , eAdmin, (req,res) => {
             Categoria.find().then( (categoria) => {
                 res.render('painel/postagem/cadastrar-postagem' , {layout: 'dashboard' , categoria: categoria});
             }).catch( (err) => {
                 res.render('painel/postagem/cadastrar-postagem' , {layout: 'dashboard'})
             })
         })
-        router.post('/postagem/cadastrar/new' , (req,res) => {
+        router.post('/postagem/cadastrar/new' , eAdmin, (req,res) => {
             // Validation
                 var erros = [];
                 let titulo = req.body.titulo_post;
@@ -195,7 +200,7 @@ const router = express.Router();
                     }
         })
 
-        router.get('/postagem/excluir/:id' , (req,res) => {
+        router.get('/postagem/excluir/:id' , eAdmin, (req,res) => {
             Postagem.deleteOne({_id: req.params.id}).then( () => {
                 req.flash('success_msg' , 'Postagem excluida');
                 res.redirect('/painel/postagem');
@@ -204,4 +209,5 @@ const router = express.Router();
                 res.redirect('/painel/postagem');
             })
         })
+
 module.exports = router;

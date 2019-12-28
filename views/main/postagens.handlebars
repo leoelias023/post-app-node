@@ -1,4 +1,14 @@
 <link rel="stylesheet" href="/css/main/postagens.css">
+{{#if success_msg}}
+    <div class="box-msg box-msg-success">
+        {{success_msg}}
+    </div>
+{{/if}}
+{{#if error_msg}}
+    <div class="box-msg box-msg-error">
+        {{error_msg}}
+    </div>
+{{/if}}
 <div class="card mt-4 align-center">
     <h1 class="align-center">Bem vindo,</h1>
     <p class="mt-2">PostApp, aqui você encontra noticias de diversos tipos e gêneros.</p>
@@ -6,8 +16,13 @@
 </div>
 <h2 class="align-center mt-4">Postagens</h2>
 <div class="card mt-2">
+    <div class="filter">
+        <label>Ordenar: </label>
+        <a href="/postagens/-1" class="btn">Nova</a>
+        <a href="/postagens/1" class="btn">Antiga</a>
+    </div>
     {{#each postagens}}
-        <div class="card">
+        <div class="card mt-2">
             <h3>{{titulo}}</h3>
             <p>{{conteudo}}</p>
             <small>{{date}}</small>
